@@ -78,7 +78,7 @@ def load_data(city, month, day):
 
     return df
 
-def time_stats(df):
+def time_status(df):
     """Displays statistics on the most frequent times of travel."""
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
@@ -181,8 +181,8 @@ def user_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-# ask the user if he wants more information 
-def ask_view(df):
+
+def ask_user(df):
     view_data = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no\n')
     start_loc = 0
     while (view_data != 'no'):
@@ -197,11 +197,11 @@ def main():
         city, month, day = get_filters()
         df = load_data(city, month, day)
 
-        time_stats(df)
+        time_status(df)
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        ask_view(df)
+        ask_user(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
